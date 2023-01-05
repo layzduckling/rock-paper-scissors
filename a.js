@@ -1,4 +1,0 @@
-AuthenticatorAssertionResponse
-  aaaaa
-    aaaaaaaaa
-      aaaaaaa
