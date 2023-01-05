@@ -56,8 +56,8 @@ function game() {
 
     console.log(
       `Round ${i}: ` +
-        createResultMessage(results, playerSelection, computerSelection) +
-        `\nYour Score: ${playerScore}, Computer Score: ${computerScore}`
+      createResultMessage(results, playerSelection, computerSelection) +
+      `\nYour Score: ${playerScore}, Computer Score: ${computerScore}`
     );
   }
 
