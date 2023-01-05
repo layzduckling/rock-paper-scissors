@@ -1,0 +1,4 @@
+AuthenticatorAssertionResponse
+  aaaaa
+    aaaaaaaaa
+      aaaaaaa
