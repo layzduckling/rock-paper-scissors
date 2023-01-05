@@ -1,6 +1,6 @@
 function getComputerChoice() {
     // 0 - rock, 1 - paper, 2 - scissors
-    let choiceNumber = Math.floor(Math.random() * 3);
+    const choiceNumber = Math.floor(Math.random() * 3);
 
     if (choiceNumber === 0) {
         return "rock";
@@ -22,21 +22,43 @@ function createResultMessage(result, playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase(); // make case-insensitive
-
     if (playerSelection === computerSelection) {
-        return "tie"
+        return "tie";
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
-        return "won"
+        return "won";
     } else if (
         (playerSelection === "rock" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "scissors") ||
         (playerSelection === "scissors" && computerSelection === "rock")
     ) {
-        return "lost"
+        return "lost";
     }
 }
+
+function game() {
+    let computerScore = 0;
+    let playerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Rock, paper or scissors?").toLowerCase(); // make case-insensitive
+        const computerSelection = getComputerChoice();
+        const results = playRound(playerSelection, computerSelection);
+
+        if (results === "won") {
+            playerScore++;
+        } else if (results === "lost") {
+            computerScore++;
+        }
+
+        console.log(
+            createResultMessage(results, playerSelection, computerSelection)
+            + `\nYour Score: ${playerScore}, Computer Score: ${computerScore}`
+        );
+    }
+}
+
+game()
