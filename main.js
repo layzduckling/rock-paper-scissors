@@ -1,4 +1,4 @@
-function getComputerChoice() {
+function getComputerSelection() {
     // 0 - rock, 1 - paper, 2 - scissors
     const choiceNumber = Math.floor(Math.random() * 3);
 
@@ -45,7 +45,7 @@ function game() {
 
     for (let i = 1; i <= 5; i++) {
         const playerSelection = prompt("Rock, paper or scissors?").toLowerCase(); // make case-insensitive
-        const computerSelection = getComputerChoice();
+        const computerSelection = getComputerSelection();
         const results = playRound(playerSelection, computerSelection);
 
         if (results === "won") {
